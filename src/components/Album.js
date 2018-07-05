@@ -4,7 +4,7 @@ class Album extends Component {
   render() {
     return (
       <section className="album">
-        Album page goes here.
+        { this.props.match.params.slug } Album page goes here.
       </section>
     );
   }
