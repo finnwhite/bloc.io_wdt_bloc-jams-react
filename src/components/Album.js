@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
+import Song from './Song';
 
 class Album extends Component {
   constructor(props) {
@@ -9,16 +10,17 @@ class Album extends Component {
     const album = albumData.find( (album) => {
       return (album.slug === slug);
     });
-    const defaultSong = album.songs[0];
+    //const defaultSong = album.songs[0];
 
     this.state = {
       album: album,
-      currentSong: defaultSong,
+      //currentSong: defaultSong,
+      currentSong: null,
       isPlaying: false
     };
 
     this.audioElement = document.createElement("audio");
-    this.audioElement.src = defaultSong.audioSrc;
+    //this.audioElement.src = defaultSong.audioSrc;
   }
 
   play() {
@@ -67,13 +69,17 @@ class Album extends Component {
             <col id="song-duration-column" />
           </colgroup>
           <tbody>
-            { album.songs.map( (song, index) =>
-              <tr className="song" key={ index }
-                onClick={ () => this.handleSongClick(song) }>
-                <td>{ index+1 }</td>
-                <td>{ song.title }</td>
-                <td>{ song.duration } seconds</td>
-              </tr>
+            { album.songs.map( (song, index) => {
+              let isCurrent = (song === this.state.currentSong);
+              return (
+                <Song key={ index }
+                  index={ index }
+                  song={ song }
+                  isCurrent={ isCurrent }
+                  isPlaying={ (isCurrent && this.state.isPlaying) }
+                  handleClick={ () => this.handleSongClick(song) }
+                /> );
+              }
             ) }
           </tbody>
         </table>
