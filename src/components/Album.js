@@ -57,7 +57,7 @@ class Album extends Component {
     const prevIndex = Math.max(0, currentIndex - 1);
     const prevSong = songs[prevIndex];
 
-    //if ( (nextSong === currentSong) ) { return false; }
+    //if ( (prevSong === currentSong) ) { return false; }
     this.setSong(prevSong);
     this.play();
     //if ( this.state.isPlaying ) { this.play(); }
