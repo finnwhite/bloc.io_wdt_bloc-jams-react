@@ -24,7 +24,6 @@ class Song extends Component {
   }
 
   render() {
-    const song = this.props.song;
     return (
       <tr className="song" key={ this.props.index }
         onClick={ this.props.handleClick }
@@ -32,8 +31,8 @@ class Song extends Component {
         onMouseLeave={ () => this.handleMouseLeave() }
       >
         <td>{ this.renderIcon() }</td>
-        <td>{ song.title }</td>
-        <td>{ song.duration } seconds</td>
+        <td>{ this.props.title }</td>
+        <td>{ this.props.duration }</td>
       </tr>
     );
   }
