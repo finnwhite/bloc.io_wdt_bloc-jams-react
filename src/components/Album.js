@@ -133,21 +133,21 @@ class Album extends Component {
     return (
       <section className="album">
 
-        <section id="album-info">
-          <img id="album-cover-art"
+        <section className="album-info">
+          <img className="album-cover-art"
             src={ album.albumCover } alt={ album.title } />
           <div className="album-details">
-            <h1 id="album-title">{ album.title }</h1>
+            <h1 className="album-title">{ album.title }</h1>
             <h2 className="artist">{ album.artist }</h2>
-            <div id="release-info">{ album.releaseInfo }</div>
+            <div className="release-info">{ album.releaseInfo }</div>
           </div>
         </section>
 
-        <table id="song-list">
+        <table className="song-list">
           <colgroup>
-            <col id="song-number-column" />
-            <col id="song-title-column" />
-            <col id="song-duration-column" />
+            <col className="song-number-column" />
+            <col className="song-title-column" />
+            <col className="song-duration-column" />
           </colgroup>
           <tbody>
             { album.songs.map( (song, index) => {
