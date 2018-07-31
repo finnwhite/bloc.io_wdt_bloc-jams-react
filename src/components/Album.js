@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Album.css';
 import albumData from './../data/albums';
 import Song from './Song';
 import PlayerBar from './PlayerBar';

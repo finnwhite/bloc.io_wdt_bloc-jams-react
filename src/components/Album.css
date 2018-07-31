@@ -1,0 +1,86 @@
+main > .album {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0;
+  width: 100%;
+  min-width: var(--min-width);
+  /*border: 1px solid var(--color-primary); /* for testing only! */
+}
+
+.album-info {
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: var(--margin);
+  margin-top: var(--spacing-y);
+  width: var(--min-width);
+  min-width: var(--min-width);
+}
+
+.album-info > .album-cover-art {
+  box-shadow: var(--shadow-img);
+}
+
+.album-info > .album-details {
+  position: absolute;
+  top: 0px;
+  margin: 3px 5px;
+  padding: 3px 11px;
+  background-color: var(--color-primary-light-overlay);
+  color: var(--color-text-on-light);
+}
+
+.album-details > .album-title,
+.album-details > .artist,
+.album-details > .release-info {
+  display: inline;
+  margin: 0 5px;
+  font-weight: normal;
+  font-size: 100%;
+}
+.album-details > .album-title {
+  color: var(--color-secondary);
+  font-weight: bold;
+}
+.album-details > .release-info {
+  text-transform: uppercase;
+  font-size: 75%;
+}
+
+.song-list {
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: var(--margin);
+  width: var(--width);
+  min-width: var(--min-width);
+  background-color: var(--color-primary-light-overlay);
+}
+
+.song-number-column,
+.song-duration-column {
+  width: 1%;
+}
+.song-title-column {
+  width: 100%;
+}
+
+.song-list .song {
+  border: 1px dashed var(--color-primary);
+  border-right:0;
+  border-left: 0;
+  cursor: pointer;
+}
+.song-list .song:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-dark);
+}
+
+.song-list td {
+  padding: 3px 11px;
+  color: inherit;
+  text-align: right;
+}
+.song-list td:nth-child(2) { /* title */
+  text-align: left;
+}

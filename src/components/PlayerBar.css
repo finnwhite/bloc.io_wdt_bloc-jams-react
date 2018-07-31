@@ -1,0 +1,92 @@
+.player-bar {
+  --padding-x: 0.5em;
+  --padding-y: 0.7em;
+  --color-active: white;
+  --color-inactive: var(--color-secondary-dark);
+  --color-focus: var(--color-secondary-light);
+
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: var(--padding-y) var(--padding-x);
+  height: 3em;
+  background-color: var(--color-secondary);
+  color: var(--color-text-on-dark);
+  text-align: center;
+  font-size: 1em;
+}
+
+.player-bar button {
+  width: 2.5em;
+  border: 1.5px solid var(--color-inactive);
+  background-color: inherit;
+  color: inherit;
+  font-size: 1em;
+  cursor: pointer;
+}
+.player-bar button:hover {
+  border-color: var(--color-active);
+}
+.player-bar button:focus {
+  outline: none;
+  background-color: var(--color-focus);
+}
+
+/* style range inputs - NON-STANDARD */
+.player-bar .seek-bar {
+  appearance: none;
+  margin: 0 var(--padding-x);
+  width: 65%;
+  height: 3px;
+  background-color: var(--color-inactive);
+  vertical-align: 0.3em;
+  cursor: pointer;
+}
+.player-bar .seek-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  box-shadow: var(--shadow-box);
+  border-radius: 0.5em;
+  background-color: var(--color-text-on-dark);
+}
+.player-bar .seek-bar:focus {
+  outline: none;
+  background-color: var(--color-focus);
+}
+
+.player-bar .buttons {
+  position: absolute;
+  top: var(--padding-y);
+  left: 0px;
+  padding: 0.2em 0;
+  width: 70%;
+}
+
+.player-bar .buttons .play-pause {
+  margin: 0 var(--padding-x);
+}
+
+.time-control {
+  position: absolute;
+  bottom: var(--padding-y);
+  left: 0px;
+  width: 70%;
+}
+
+.time-control > div {
+  display: inline;
+  font-size: 0.8em;
+}
+
+.volume-control {
+  position: absolute;
+  right: 0px;
+  bottom: var(--padding-y);
+  width: 30%;
+}
+
+.volume-control > div {
+  display: inline;
+  font-size: 1em;
+}

@@ -1,0 +1,42 @@
+.landing {
+  margin: var(--margin);
+  width: var(--width);
+  min-width: var(--min-width);
+}
+
+.landing .hero-title {
+  margin: 0 0 var(--spacing-y);
+  padding: 5px 0;
+  box-shadow: var(--shadow-box);
+  border-radius: var(--rounded-corners-bottom);
+  background-color: white;
+  color: var(--color-primary-dark);
+  text-align: center;
+  font-style: italic;
+  font-size: 100%;
+}
+
+.landing .selling-points {
+  margin: 0 0 var(--spacing-y);
+}
+
+.landing .point {
+  margin: 0 0 15px;
+  box-shadow: var(--shadow-box);
+  border-radius: var(--rounded-corners-bottom);
+  background-color: white;
+}
+.landing .point:nth-child(even) {
+  text-align: right;
+}
+
+.landing .point-title {
+  padding: 13px 21px;
+  background-color: var(--color-secondary);
+  color: var(--color-text-on-dark);
+  font-size: 115%;
+}
+
+.landing .point-description {
+  padding: 13px 21px 19px;
+}
